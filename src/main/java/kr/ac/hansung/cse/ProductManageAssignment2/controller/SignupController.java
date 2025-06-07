@@ -37,7 +37,7 @@ public class SignupController {
             return "signup";
         }
         if (userRepository.findByEmail(user.getEmail()).isPresent()) {
-            model.addAttribute("emailError", "이미 사용 중인 이메일입니다.");
+            model.addAttribute("emailExists", true);
             return "signup";
         }
 
